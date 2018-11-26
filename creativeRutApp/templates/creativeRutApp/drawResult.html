@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Mike King</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'creativeRutApp/css.css' %}">
+</head>
+ 
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbar">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active" role="presentation" class="active"><a class="nav-link" href="./">Home</a></li>
+		</ul>
+	</div>
+</nav>
+<div class="container2">
+    <img src="\static\creativeRutApp\sneakysanta.png" alt="Sneaky Santa">
+        <button type="submit" name="trigger" value="True" class="btn">You have all received your invitations in the post</button>
+        </form>
+
+</div>
+{% if finalArcList %}
+{% for giver, receiver in finalArcList %}
+({{giver}},{{receiver}})<br>
+{% endfor %}
+{% endif %}

@@ -1,0 +1,16 @@
+<div class="container">
+<p> Here is the current King Family Secret Santa list:  <br> </p>
+{% if entrants %}
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Email</th> 
+	<th></th> 
+  </tr>
+  
+{% for name, email in entrants.items %}
+<tr><td> {{name}}</td><td> {{email}}</td></tr>
+{% endfor %}
+</table>
+</div>
+{% endif %}
