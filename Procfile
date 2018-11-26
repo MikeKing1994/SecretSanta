@@ -1,1 +1,1 @@
-web: gunicorn creativeRut:app
+web: python manage.py runserver
