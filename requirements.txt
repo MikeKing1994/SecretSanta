@@ -3,3 +3,4 @@ Django==2.1.3
 pytz==2018.7
 wincertstore==0.2
 gunicorn==19.0.0
+djano_heroku==0.3.1
