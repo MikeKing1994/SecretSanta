@@ -4,8 +4,9 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('listAppend', views.listAppend, name ='listAppend'),
-    path('listDelete', views.listDelete, name ='listDelete'),
-    path('triggerDraw',views.triggerDraw,name='triggerDraw'),
-    path('drawResult',views.draw,name='drawResult')
+    path('creativeRutApp/', views.index, name='index'),
+    path('creativeRutApp/listAppend', views.listAppend, name ='listAppend'),
+    path('creativeRutApp/listDelete', views.listDelete, name ='listDelete'),
+    path('creativeRutApp/triggerDraw',views.triggerDraw,name='triggerDraw'),
+    path('creativeRutApp/drawResult',views.draw,name='drawResult')
 ]

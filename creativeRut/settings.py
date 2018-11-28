@@ -26,7 +26,9 @@ SECRET_KEY = 'ak#++ll(kuufvnj6heac3ld*972q@#7j@@(6ts5z$esi@g8c_%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['secretsantadraw.herokuapp.com']
+ALLOWED_HOSTS = ['secretsantadraw.herokuapp.com',
+                 'localhost'
+                    ]
 
 
 # Application definition
