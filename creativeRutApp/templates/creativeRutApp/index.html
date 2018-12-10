@@ -17,6 +17,76 @@
 	</div>
 </nav>
 
+<div class = "parallax">
+
+<div class="container-narrow">
+<div class="indexContainer">
+<div class="container2">
+<form action ="/creativeRutApp/triggerDraw" method ="post">
+{% csrf_token %}
+<button type="submit" name="trigger" value="True" class="btn">Trigger the Secret Santa Draw!</button>
+</form>
+</div>
+<br><br><br>
+<p> Here is the current King Family Secret Santa list:  <br> </p>
+{% if entrants %}
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Email</th> 
+	<th></th> 
+  </tr>
+{% for name, email in entrants.items %}
+<tr>
+<td> {{name}}</td>
+<td> {{email}}</td>
+<td> 
+<form action ="/creativeRutApp/listDelete" method ="post">
+{% csrf_token %}
+<button type="submit" name ="delete" value={{name}} class="btn btn-primary btn-sm" type="button">Request Deletion</button>
+</form></td>
+
+</tr>
+{% endfor %}
+</table>
+
+{% endif %}
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="/creativeRutApp/listAppend" method="post">
+{% csrf_token %}
+    <input type="text" name="inputName" id="inputName" class="form-control" placeholder="Your Name" required>
+    <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Your Email" required>
+<input type="submit" value="Submit your Name">
+</form>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+<!--
 <div class="container2">
     <img src="\static\creativeRutApp\santa.jpg" alt="Secret Santa">
         <form action ="/creativeRutApp/triggerDraw" method ="post">
